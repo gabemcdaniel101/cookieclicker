@@ -1,0 +1,119 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webelement import WebElement
+from selenium.common.exceptions import ElementNotInteractableException
+from selenium.common.exceptions import ElementClickInterceptedException
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
+import pyautogui
+import time
+
+PATH = "F:\Desktop\chromedriver.exe"
+driver = webdriver.Chrome(PATH)
+
+driver.get("https://orteil.dashnet.org/cookieclicker/")
+time.sleep(2)
+
+while True:
+    big_cookie = driver.find_element_by_id("bigCookie")
+    big_cookie.click()
+    product0 = driver.find_element_by_id("product0")
+    big_cookie.click()
+    num_product0 = driver.find_element_by_id("productOwned0")
+    if num_product0.text == "":
+        num_product0 = 0
+    else:
+        num_product0 = float(num_product0.text)
+    if float(num_product0) <= 40:
+        product0.click()
+    else:
+        continue
+    product1 = driver.find_element_by_id("product1")
+    big_cookie.click()
+    product1.click()
+    product2 = driver.find_element_by_id("product2")
+    big_cookie.click()
+    big_cookie.click()
+    big_cookie.click()
+    big_cookie.click()
+    try:
+        product2.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        continue
+    big_cookie.click()
+    product3 = driver.find_element_by_id("product3")
+    big_cookie.click()
+    try:
+        product3.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        continue
+    product4 = driver.find_element_by_id("product4")
+    big_cookie.click()
+    big_cookie.click()
+    try:
+        product4.click()
+        big_cookie.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        continue
+    big_cookie.click()
+    product5 = driver.find_element_by_id("product5")
+    big_cookie.click()
+    big_cookie.click()
+    try:
+        product5.click()
+        big_cookie.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        big_cookie.click()
+        continue
+    product6 = driver.find_element_by_id("product6")
+    big_cookie.click()
+    big_cookie.click()
+    try:
+        product6.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        big_cookie.click()
+        continue
+    product7 = driver.find_element_by_id("product7")
+    big_cookie.click()
+    try:
+        product7.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        continue
+    product8 = driver.find_element_by_id("product8")
+    big_cookie.click()
+    big_cookie.click()
+    try:
+        big_cookie.click()
+        product8.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        continue
+    product9 = driver.find_element_by_id("product9")
+    big_cookie.click()
+    big_cookie.click()
+    try:
+        product9.click()
+        big_cookie.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        continue
+    product10 = driver.find_element_by_id("product10")
+    big_cookie.click()
+    big_cookie.click()
+    try:
+        product10.click()
+        big_cookie.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        continue
+    big_cookie.click()
+    product11 = driver.find_element_by_id("product11")
+    big_cookie.click()
+    big_cookie.click()
+    try:
+        product11.click()
+        big_cookie.click()
+    except ElementNotInteractableException or ElementClickInterceptedException:
+        continue
+    big_cookie.click()
+    pyautogui.click(1650, 550, 1)
